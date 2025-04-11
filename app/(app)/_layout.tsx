@@ -1,12 +1,11 @@
 import { Text } from 'react-native';
-import { Redirect, Stack } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import { useSession } from '../../ctx';
 
 export default function AppLayout() {
     const { session, isLoading } = useSession();
-    console.log('sesseion', session)
-    console.log('isloading', isLoading)
 
     // You can keep the splash screen open, or render a loading screen like we do here.
     if (isLoading) {
@@ -22,5 +21,20 @@ export default function AppLayout() {
     }
 
     // This layout can be deferred because it's not the root layout.
-    return <Stack />;
+    return <Tabs >
+        <Tabs.Screen
+            name="index"
+            options={{
+                title: 'Home',
+                tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
+            }}
+        />
+        <Tabs.Screen
+            name="settings"
+            options={{
+                title: 'Settings',
+                tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+            }}
+        />
+    </Tabs>;
 }

@@ -8,12 +8,11 @@ import { useState } from 'react';
 export default function Login() {
     const { signIn } = useSession();
     const [userDetails, setUserDetails] = useState<user>({
-        username: '',
+        email: '',
         password: ''
     })
 
     const handleInputChange = (value: string, name: string) => {
-        console.log('e', value)
         setUserDetails((prev) => {
             return {
                 ...prev,
@@ -26,11 +25,11 @@ export default function Login() {
         <>
             <TextInput
                 mode="outlined"
-                label="Username"
+                label="email"
                 placeholder="Type something"
-                value={userDetails.username}
+                value={userDetails.email}
                 right={<TextInput.Affix text="/100" />}
-                onChangeText={(value) => handleInputChange(value, 'username')}
+                onChangeText={(value) => handleInputChange(value, 'email')}
             />
             <TextInput
                 mode="outlined"
