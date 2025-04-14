@@ -7,10 +7,10 @@ const MainWeather = (props: any) => {
     type WeatherType = 'Clear' | 'Clouds' | 'Rain' | 'Thunderstorm';
 
     const imageMap: Record<WeatherType, any> = {
-        Clear: require('../../assets/images/partlycloudy.jpg'),
-        Clouds: require('../../assets/images/partlycloudy.jpg'),
-        Rain: require('../../assets/images/partlycloudy.jpg'),
-        Thunderstorm: require('../../assets/images/partlycloudy.jpg'),
+        Clear: require('../../assets/images/clear.jpg'),
+        Clouds: require('../../assets/images/cloudy.jpg'),
+        Rain: require('../../assets/images/rainy.jpg'),
+        Thunderstorm: require('../../assets/images/thunderstorm.jpg'),
     };
 
     const fallbackImage = require('../../assets/images/partlycloudy.jpg');
@@ -23,7 +23,7 @@ const MainWeather = (props: any) => {
                 style={styles.background}
                 imageStyle={{ borderRadius: 12 }} // Match Card styling
             >
-                <Text style={styles.text}>{weatherMain}</Text>
+                <Text style={styles.text}>{weatherMain || ''}</Text>
                 <Text style={styles.text}>{props.weather?.description || 'No description'}</Text>
             </ImageBackground>
         </Card>

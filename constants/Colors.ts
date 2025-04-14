@@ -23,4 +23,27 @@ export const Colors = {
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
   },
+  // Add more to your theme.ts
+  rain: {
+    background: '#E3F2FD',
+    card: '#BBDEFB',
+    text: '#0D47A1',
+    button: '#1976D2',
+    temperature: '#1565C0',
+  },
+  cloudy: {
+    background: '#ECEFF1',
+    card: '#CFD8DC',
+    text: '#455A64',
+    button: '#607D8B',  
+    temperature: '#78909C',
+  },
+   sunny: {
+    background: '#FFFBEB',
+    card: '#FFF9C4',
+    text: '#333333',
+    button: '#F9A825',
+    temperature: '#FF8F00',
+  },
+
 };

@@ -38,7 +38,6 @@ const login = async (req: user) => {
         const userCredential = await signInWithEmailAndPassword(auth, req.email, req.password);
         const token = await userCredential.user.getIdToken();
 
-        console.log("Login successful, token:", token);
         return token
 
     } catch (error: any) {
@@ -53,7 +52,6 @@ const login = async (req: user) => {
             text2: message,
         });
 
-        console.log('Firebase Auth Error:', error.code, error.message);
         return error
     }
     // try {
@@ -81,7 +79,6 @@ export function SessionProvider({ children }: PropsWithChildren) {
                 signIn: async (data: user) => {
                     // Perform sign-in logic here
                     const udata = await login(data)
-                    console.log('udata', udata)
                     if (!udata?.code) {
                         showToast('success', 'Login Success!')
 
