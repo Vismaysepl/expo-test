@@ -6,7 +6,7 @@ import { TOMORROW_API_KEY, TOMORROW_WEATHER_API } from '@/constants/api';
 import WeatherCard from '@/components/WeatherCards';
 
 export default function Home() {
-    const [city, setCity] = useState('')
+    const [city, setCity] = useState('Ahmedabad')
     const [loading, setLoading] = useState(false)
     const [weatherData, setWeatherData] = useState<any>(null)
     const [forecast, setForecast] = useState<any>(null)
@@ -34,6 +34,7 @@ export default function Home() {
                     <TextInput
                         mode="outlined"
                         label="City"
+                        value={city}
                         placeholder="Type something"
                         style={{ width: 300 }}
                         onChangeText={e => setCity(e)}

@@ -37,7 +37,6 @@ const WeatherCard = (props: any) => {
                 <WeatherInfoOfCity info={props?.Weatherreport?.data?.values} weather={weathername} />
                 <WindCard windy={props?.Weatherreport?.data?.values} />
                 <HourlyWeatherCard data={props?.forecast?.timelines} />
-                <Card style={styles.card}> <Text> {''}</Text></Card>
             </ScrollView>
         </Card>
     );
